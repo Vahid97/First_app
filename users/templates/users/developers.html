@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Developers Page</h1>
+
+<div style="text-align: center; margin-top: 100px;">
+    <div style="padding-bottom: 70px;">
+        <form action="{% url 'developers' %}" method="get">
+            {% csrf_token %}
+            <input type="text" placeholder="search for developers" name="search_query">
+            <input type="submit" value="Search">
+        </form>
+
+    </div>
+
+    {% for developer in developers %}
+
+        <h4><a href="{% url 'user-profile' developer.id %}">{{developer.username}}</a></h4>
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

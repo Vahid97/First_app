@@ -1,0 +1,23 @@
+{% extends 'main.html' %} {% block content %}
+
+<h1>This is Login Page</h1>
+
+<form action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username">
+    <input type="text" name="password" placeholder="password">
+    <input type="submit" valur="submit">
+
+</form>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+
+{% endblock %}

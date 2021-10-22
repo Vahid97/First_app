@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Projects Page</h1>
+
+<div style="text-align: center; margin-top: 100px;">
+
+  <div style="padding-bottom: 70px;">
+    <form action="{% url 'projects' %}" method="get">
+
+      <input type="text" placeholder="Search for projects" name="search_query">
+      <input type="submit" value="Search">
+
+    </form>
+
+  </div>
+
+  {% for project in projects %}
+
+    <h3><a href="{% url 'single-project' project.id %}">{{project.title}}</a></h3>
+
+  {% endfor %} 
+
+</div>
+
+<!-- PAGINATION SECTION -->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

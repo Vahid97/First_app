@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Single Project</h1>
+
+
+
+<h3>{{projectObj.title}}</h3>
+
+<p>{{projectObj.description}}</p>
+
+{% for review in reviews %}
+    <p>{{review.body}}</p>
+
+{% endfor %}
+
+
+
+<a href="{% url 'projects' %}">Go back</a>
+
+
+{% endblock %}
+
+
+
+
+
+
+

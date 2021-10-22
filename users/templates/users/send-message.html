@@ -1,0 +1,10 @@
+<h1>Send message page</h1>
+
+<form action="{% url 'sendMessage' user.id %}" method="post">
+  {% csrf_token %}
+
+  <input type="text" placeholder="subject" name="subject" />
+  <input type="text" placeholder="receiver" name="receiver" />
+  <textarea name="body" placeholder="body" cols="30" rows="1"></textarea>
+  <input type="submit" value="send" />
+</form>

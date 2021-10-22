@@ -1,0 +1,33 @@
+{% extends 'main.html' %} 
+
+{% block content %}
+
+<div style="text-align: center;">
+
+    <h1 style="padding-bottom: 100px">User Profile Page</h1>
+    <h1 style="padding-bottom: 100px">{{user.username}} </h1>
+    
+</div>
+
+
+<div style="text-align: center;">
+    <h3><a href="{% url 'sendMessage' user.id %}">Send Message</a></h3>
+</div>
+
+
+{% for skill in skills %}
+
+<div style="text-align: center;">
+    <p>{{skill.name}}</p>
+</div>
+
+{% endfor %}
+
+<div style="text-align: center;">
+
+    <a href="{% url 'add-project'%}">Add project</a>
+    <a href="{% url 'add-skill' %}">Add skill</a>
+
+</div>
+
+{% endblock %}

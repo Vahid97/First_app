@@ -1,0 +1,15 @@
+<h1>Inbox page</h1>
+
+{% for message in messages %}
+    {% csrf_token %}
+    <div>
+        <h3><a href="{% url 'messageInbox' message.id %}">{{message.subject}}</a></h3>
+    </div>
+
+{% endfor %}
+
+
+
+
+
+
